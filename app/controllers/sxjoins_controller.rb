@@ -1,0 +1,2 @@
+class SxjoinsController < ApplicationController
+end

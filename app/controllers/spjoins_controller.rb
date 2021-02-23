@@ -1,0 +1,2 @@
+class SpjoinsController < ApplicationController
+end

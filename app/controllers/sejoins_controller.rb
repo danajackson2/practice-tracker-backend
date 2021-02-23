@@ -1,0 +1,2 @@
+class SejoinsController < ApplicationController
+end
