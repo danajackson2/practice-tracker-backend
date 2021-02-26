@@ -1,7 +1,40 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Longtone.destroy_all
+Scale.destroy_all
+
+Longtone.create(note:"A")
+Longtone.create(note:"B♭")
+Longtone.create(note:"B")
+Longtone.create(note:"C")
+Longtone.create(note:"C♯")
+Longtone.create(note:"D")
+Longtone.create(note:"E♭")
+Longtone.create(note:"E")
+Longtone.create(note:"F")
+Longtone.create(note:"F♯")
+Longtone.create(note:"G")
+Longtone.create(note:"A♭")
+
+Scale.create(note:"A", quality: 'maj')
+Scale.create(note:"B♭", quality: 'maj')
+Scale.create(note:"B", quality: 'maj')
+Scale.create(note:"C", quality: 'maj')
+Scale.create(note:"C♯", quality: 'maj')
+Scale.create(note:"D", quality: 'maj')
+Scale.create(note:"E♭", quality: 'maj')
+Scale.create(note:"E", quality: 'maj')
+Scale.create(note:"F", quality: 'maj')
+Scale.create(note:"F♯", quality: 'maj')
+Scale.create(note:"G", quality: 'maj')
+Scale.create(note:"A♭", quality: 'maj')
+Scale.create(note:"A", quality: 'min')
+Scale.create(note:"B♭", quality: 'min')
+Scale.create(note:"B", quality: 'min')
+Scale.create(note:"C", quality: 'min')
+Scale.create(note:"C♯", quality: 'min')
+Scale.create(note:"D", quality: 'min')
+Scale.create(note:"E♭", quality: 'min')
+Scale.create(note:"E", quality: 'min')
+Scale.create(note:"F", quality: 'min')
+Scale.create(note:"F♯", quality: 'min')
+Scale.create(note:"G", quality: 'min')
+Scale.create(note:"A♭", quality: 'min')
