@@ -3,10 +3,9 @@ class RecordingsController < ApplicationController
     def create
         temp_id= User.find_by(username:'dummy_user').sessions[0].id
         recording = Recording.create(session_id: temp_id, audio_data: rec_params)
-        # url = Rails.application.routes.url_helpers.rails_blob_path(recording.audio_data, only_path: true)
-        # url = rails_blob_path(recording.audio_data, only_path: true)
+        # add title to recording
         url = url_for(recording.audio_data)
-        render json: {url: url}
+        render json: {url: url, id: recording.id}
     end
 
     private
