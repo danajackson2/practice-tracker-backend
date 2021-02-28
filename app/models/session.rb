@@ -1,5 +1,6 @@
 class Session < ApplicationRecord
   belongs_to :user
+  has_many :recordings
   has_many :scjoins
   has_many :scales, through: :scjoins
   has_many :sljoins
