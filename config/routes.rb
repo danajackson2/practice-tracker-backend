@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   post '/recordings', to: 'recordings#create'
   post '/login', to: 'auth#create'
   get '/persist', to: 'auth#show'
+  post '/instEtudes', to: 'etudes#instEtudes'
 end
