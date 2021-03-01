@@ -14,15 +14,14 @@ class SessionsController < ApplicationController
         session_params['etudes'].each{|etude| Sejoin.create(session_id: session.id, etude_id: Etude.find_or_create_by(composer: etude['composer'], book: etude['book'], number: etude['number']).id)}
         session_params['pieces'].each{|piece| Spjoin.create(session_id: session.id, piece_id: Piece.find_or_create_by(composer: piece['composer'], title: piece['title']).id)}
         session_params['excerpts'].each{|ex| Sxjoin.create(session_id: session.id, excerpt_id: Excerpt.find_or_create_by(composer: ex['composer'], work: ex['work'], place: ex['place']).id)}
-        # session_params['recordings'].each{|rec| Recording.create(session_id: session.id, audio_data: rec)}
+        
+        temp_id = User.find_by(username:'dummy_user').sessions[0].id
+        newRecs = Recording.all.select{|rec| rec.session_id == temp_id}
+        newRecs.each{|rec| rec.update(session_id: session.id)}
         render json: {message: 'Great practice, now go take a break!'}
     end
 
     private
-
-    def rec_params
-        params.require(:session).permit(recordings: [])
-    end
 
     def session_params 
         params.require(:session).permit(
@@ -34,7 +33,6 @@ class SessionsController < ApplicationController
             :focus_rating, 
             longtones: [], 
             scales: [],
-            # recordings: [],
             etudes: [
                 :composer,
                 :book,

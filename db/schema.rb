@@ -54,8 +54,7 @@ ActiveRecord::Schema.define(version: 2021_02_28_014929) do
   create_table "excerpts", force: :cascade do |t|
     t.string "work"
     t.string "composer"
-    t.date "year_composed"
-    t.string "composer_dates"
+    t.string "place"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -69,14 +68,13 @@ ActiveRecord::Schema.define(version: 2021_02_28_014929) do
   create_table "pieces", force: :cascade do |t|
     t.string "title"
     t.string "composer"
-    t.date "year_composed"
-    t.string "composer_dates"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "recordings", force: :cascade do |t|
     t.bigint "session_id", null: false
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["session_id"], name: "index_recordings_on_session_id"

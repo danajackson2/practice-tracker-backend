@@ -1,15 +1,15 @@
 class RecordingsController < ApplicationController
 
     def create
-        recording = Recording.create(session_id: 1, audio_data: rec_params)
-        byebug
-        url = rails_blob_path(recording, only_path: true)
-        render json: {url: url}
+        temp_id= User.find_by(username:'dummy_user').sessions[0].id
+        recording = Recording.create(session_id: temp_id, name: rec_params['name'], audio_data: rec_params['recording'])
+        url = url_for(recording.audio_data)
+        render json: {url: url, id: recording.id, name: recording.name}
     end
 
     private
     
     def rec_params
-        params.require(:recording)
+        params.require(:data).permit(:name, :recording)
     end
 end
