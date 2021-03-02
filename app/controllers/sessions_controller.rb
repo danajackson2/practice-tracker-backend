@@ -1,5 +1,10 @@
 class SessionsController < ApplicationController
 
+    def show
+        sessions = Session.all.select{|s|s.user_id == user_id_params['id'].to_i}
+        render json: sessions
+    end
+
     def create
         session = Session.create(
             user_id: session_params['user_id'], 
@@ -48,6 +53,10 @@ class SessionsController < ApplicationController
                 :place
             ],
         )
+    end
+
+    def user_id_params
+        params.permit(:id)
     end
 
 end

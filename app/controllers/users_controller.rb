@@ -1,14 +1,6 @@
 class UsersController < ApplicationController
     skip_before_action :authorized, only: [:create]
-
-    def prac_data
-        userSessions = User.find(user_id_params).sessions
-        etudes = userSessions.map{|us| us.etudes}.flatten
-        pieces = userSessions.map{|us| us.pieces}.flatten
-        excerpts = userSessions.map{|us| us.excerpts}.flatten
-        render json: {etudes: etudes, pieces: pieces, excerpts: excerpts}
-    end
-
+    
     def create
         user = User.create(user_params)
         if user.valid?
@@ -19,13 +11,22 @@ class UsersController < ApplicationController
         end
     end
 
+    def prac_data
+        userSessions = User.find(user_id_params).sessions
+        etudes = userSessions.map{|us| us.etudes}.flatten
+        pieces = userSessions.map{|us| us.pieces}.flatten
+        excerpts = userSessions.map{|us| us.excerpts}.flatten
+        render json: {etudes: etudes, pieces: pieces, excerpts: excerpts}
+    end
+
     private
 
     def user_params
         params.require(:user).permit(:username, :instrument, :password)
     end
-
+    
     def user_id_params
         params.require(:user_id)
     end
+    
 end
