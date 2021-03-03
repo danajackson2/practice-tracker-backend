@@ -13,6 +13,12 @@ class RecordingsController < ApplicationController
         render json: {recordings: recordings}
     end
 
+    def destroy
+        rec = Recording.find(params[:id])
+        rec.destroy
+        render json: {message: 'Recording Deleted'}
+    end
+
     private
     
     def rec_params
