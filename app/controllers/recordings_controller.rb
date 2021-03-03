@@ -7,9 +7,19 @@ class RecordingsController < ApplicationController
         render json: {url: url, id: recording.id, name: recording.name}
     end
 
+    def show
+        getRecordings = Session.find(get_rec_params['id']).recordings
+        recordings = getRecordings.map{|rec| {url: url_for(rec.audio_data), id: rec.id, name: rec.name}}
+        render json: {recordings: recordings}
+    end
+
     private
     
     def rec_params
         params.require(:data).permit(:name, :recording)
+    end
+
+    def get_rec_params
+        params.permit(:id)
     end
 end
