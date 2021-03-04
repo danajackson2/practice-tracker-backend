@@ -11,6 +11,12 @@ class UsersController < ApplicationController
         end
     end
 
+    def update
+        user = User.find(update_params['id'])
+        user.update(username: update_params['username'], instrument: update_params['instrument'])
+        render json: user
+    end
+
     def prac_data
         userSessions = User.find(user_id_params).sessions
         etudes = userSessions.map{|us| us.etudes}.flatten
@@ -28,5 +34,9 @@ class UsersController < ApplicationController
     def user_id_params
         params.require(:user_id)
     end
-    
+
+    def update_params
+        params.require(:user).permit(:username, :instrument, :id)
+    end
+
 end
