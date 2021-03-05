@@ -28,8 +28,10 @@ class SessionsController < ApplicationController
 
     def destroy
         session = Session.find(params[:id])
+        user_id = session.user_id
         session.destroy
-        render json: {message: "Session #{params[:id]} Deleted" }
+        updatedSessions = Session.all.select{|s|s.user_id == user_id}
+        render json: updatedSessions
     end
 
     private
