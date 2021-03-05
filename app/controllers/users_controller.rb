@@ -17,6 +17,12 @@ class UsersController < ApplicationController
         render json: user
     end
 
+    def destroy
+        user = User.find(params[:id])
+        user.destroy
+        render json: {message: "User #{params[:id]} Deleted"}
+    end
+
     def prac_data
         userSessions = User.find(user_id_params).sessions
         etudes = userSessions.map{|us| us.etudes}.flatten

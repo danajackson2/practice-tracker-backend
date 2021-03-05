@@ -26,6 +26,12 @@ class SessionsController < ApplicationController
         render json: {message: 'Great practice, now go take a break!'}
     end
 
+    def destroy
+        session = Session.find(params[:id])
+        session.destroy
+        render json: {message: "Session #{params[:id]} Deleted" }
+    end
+
     private
 
     def session_params 

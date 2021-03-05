@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :sessions
-  resources :users, only: [:create, :show, :update]
+  resources :sessions, only: [:create, :show, :destroy]
+  resources :users, only: [:create, :show, :update, :destroy]
   resources :recordings, only: [:create, :show, :destroy]
   post '/login', to: 'auth#create'
   get '/persist', to: 'auth#show'

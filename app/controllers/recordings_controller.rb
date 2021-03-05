@@ -16,7 +16,7 @@ class RecordingsController < ApplicationController
     def destroy
         rec = Recording.find(params[:id])
         rec.destroy
-        render json: {message: 'Recording Deleted'}
+        render json: {message: "Recording #{params[:id]} Deleted"}
     end
 
     private
