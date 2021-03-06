@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: MyString
+  composer: MyString
+  piece: MyString
+  event: MyString
+  user: one
+
+two:
+  date: MyString
+  composer: MyString
+  piece: MyString
+  event: MyString
+  user: two

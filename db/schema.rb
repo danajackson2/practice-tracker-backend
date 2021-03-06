@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_28_014929) do
+ActiveRecord::Schema.define(version: 2021_03_06_172409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,17 @@ ActiveRecord::Schema.define(version: 2021_02_28_014929) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "performances", force: :cascade do |t|
+    t.string "date"
+    t.string "composer"
+    t.string "piece"
+    t.string "event"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_performances_on_user_id"
+  end
+
   create_table "pieces", force: :cascade do |t|
     t.string "title"
     t.string "composer"
@@ -107,7 +118,7 @@ ActiveRecord::Schema.define(version: 2021_02_28_014929) do
 
   create_table "sessions", force: :cascade do |t|
     t.date "date"
-    t.integer "duration"
+    t.string "duration"
     t.integer "focus_rating"
     t.integer "prod_rating"
     t.text "notes"
@@ -154,6 +165,7 @@ ActiveRecord::Schema.define(version: 2021_02_28_014929) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "performances", "users"
   add_foreign_key "recordings", "sessions"
   add_foreign_key "scjoins", "scales"
   add_foreign_key "scjoins", "sessions"
