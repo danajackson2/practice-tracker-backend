@@ -23,7 +23,10 @@ class SessionsController < ApplicationController
         temp_id = User.find_by(username:'dummy_user').sessions[0].id
         newRecs = Recording.all.select{|rec| rec.session_id == temp_id}
         newRecs.each{|rec| rec.update(session_id: session.id)}
-        render json: {message: 'Great practice, now go take a break!'}
+
+        allSessions = Session.select{|s| s.user_id == session_params['user_id']}
+
+        render json: allSessions
     end
 
     def destroy
