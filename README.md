@@ -20,7 +20,7 @@ To get a local copy up and running follow these simple steps.
 
 
 ## Screenshots
-![practrac welcome](blob:https://imgur.com/fb06313d-c4bd-4e9a-b5e5-63141fd33a4f)
+![practrac welcome](https://i.imgur.com/J3QiUG3.png)
 ![practrac homepage](https://i.imgur.com/iXzHaF6.png)
 ![practrac calendar](https://i.imgur.com/4LmV94j.png)
 
