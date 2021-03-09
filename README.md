@@ -1,24 +1,43 @@
-# README
+## About The Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[PracTrac](practrac.herokuapp.com)
 
-Things you may want to cover:
+PracTrac is a practice tracker for musicians. Users can record details of each practice session, including longtones, scales, etudes, pieces, and excerpts. They can also take notes about the session and make short recordings for later reference. A calendar view shows all sessions for easy reference and navigation. Users can also catalog pieces performed and sort them by date, composer, piece, or event. These also show up on the calendar.
 
-* Ruby version
+### Built With
 
-* System dependencies
+* [Rails](https://rubyonrails.org/)
+* [React](https://reactjs.org/)
+* [Bootstrap](https://getbootstrap.com)
 
-* Configuration
 
-* Database creation
+## Getting Started
 
-* Database initialization
+To get a local copy up and running follow these simple example steps.
+1. Fork and clone this repo (described below) and the [frontend repo](github.com/danajackson2/practice-tracker-frontend)
+2. In this repo's directory run npm install
+3. Then run npm start. The site will automatically load in your browser at localhost:3001/
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Contributing
 
-* ...
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+## Contact
+
+Your Name - [Dana Jackson](danajackson2.medium.com) - danajackson2@gmail.com
+
+Project Link: [https://github.com/danajackson2/practice-tracker-backend](https://github.com/danajackson2/practice-tracker-backend)
