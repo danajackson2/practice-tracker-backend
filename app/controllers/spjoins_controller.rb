@@ -1,2 +1,0 @@
-class SpjoinsController < ApplicationController
-end

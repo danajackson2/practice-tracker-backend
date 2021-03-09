@@ -1,2 +1,0 @@
-class LongtonesController < ApplicationController
-end

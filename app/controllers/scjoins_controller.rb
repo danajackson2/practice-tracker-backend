@@ -1,2 +1,0 @@
-class ScjoinsController < ApplicationController
-end

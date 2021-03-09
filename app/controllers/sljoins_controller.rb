@@ -1,2 +1,0 @@
-class SljoinsController < ApplicationController
-end
