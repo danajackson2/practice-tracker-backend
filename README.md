@@ -8,6 +8,7 @@ PracTrac is a practice tracker for musicians. Users can record details of each p
 
 * [Rails](https://rubyonrails.org/)
 * [React](https://reactjs.org/)
+* [Redux](https://redux.js.org/)
 * [Bootstrap](https://getbootstrap.com)
 
 
@@ -15,8 +16,8 @@ PracTrac is a practice tracker for musicians. Users can record details of each p
 
 To get a local copy up and running follow these simple steps.
 1. Fork and clone this repo (described below) and the [frontend repo](github.com/danajackson2/practice-tracker-frontend)
-2. In this repo's directory run npm install
-3. Then run npm start. The site will automatically load in your browser at localhost:3001/
+2. In this repo's directory run bundle install.
+3. Then run rails s. The server will spin up at localhost:3000
 
 
 ## Screenshots
@@ -43,6 +44,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Your Name - [Dana Jackson](danajackson2.medium.com) - danajackson2@gmail.com
+[Dana Jackson](danajackson2.medium.com) - danajackson2@gmail.com
 
 Project Link: [https://github.com/danajackson2/practice-tracker-backend](https://github.com/danajackson2/practice-tracker-backend)
