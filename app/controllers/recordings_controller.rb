@@ -1,7 +1,7 @@
 class RecordingsController < ApplicationController
 
     def create
-        temp_id= User.find_by(username:'dummy_user').sessions[0].id
+        temp_id = Session.find_or_create_by(duration:'dummy', user_id:rec_params['userId']).id
         recording = Recording.create(session_id: temp_id, name: rec_params['name'], audio_data: rec_params['recording'])
         url = url_for(recording.audio_data)
         render json: {url: url, id: recording.id, name: recording.name}
@@ -22,7 +22,7 @@ class RecordingsController < ApplicationController
     private
     
     def rec_params
-        params.require(:data).permit(:name, :recording)
+        params.require(:data).permit(:name, :recording, :userId)
     end
 
     def get_rec_params

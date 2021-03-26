@@ -20,9 +20,10 @@ class SessionsController < ApplicationController
         session_params['pieces'].each{|piece| Spjoin.create(session_id: session.id, piece_id: Piece.find_or_create_by(composer: piece['composer'], title: piece['title']).id)}
         session_params['excerpts'].each{|ex| Sxjoin.create(session_id: session.id, excerpt_id: Excerpt.find_or_create_by(composer: ex['composer'], work: ex['work'], place: ex['place']).id)}
         
-        temp_id = User.find_by(username:'dummy_user').sessions[0].id
+        temp_id = Session.find_by(duration:'dummy', user_id:session_params['user_id']).id
         newRecs = Recording.all.select{|rec| rec.session_id == temp_id}
         newRecs.each{|rec| rec.update(session_id: session.id)}
+        Session.find_by(duration:'dummy', user_id:session_params['user_id']).destroy
 
         allSessions = Session.select{|s| s.user_id == session_params['user_id']}
 
